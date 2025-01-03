@@ -13,4 +13,4 @@ function testToSpan(){
 
 testButton.addEventListener('click', () => {
     testToSpan();
-}
+});
