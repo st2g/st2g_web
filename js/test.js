@@ -1,5 +1,5 @@
 // This is a test
-function getTest(){
+function getTest() {
     console.log("test");
 }
 
@@ -7,7 +7,7 @@ getTest();
 
 const testButton = document.getElementById("test-button");
 const resultsSpan = document.getElementById("test-span");
-function testToSpan(){
+function testToSpan() {
     resultsSpan.innerHTML += "test</br>";
 }
 
