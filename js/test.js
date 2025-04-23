@@ -7,13 +7,8 @@ getTest();
 
 const testButton = document.getElementById("test-button");
 const resultsSpan = document.getElementById("test-span");
-<<<<<<< HEAD
-function testToSpan() {
-    resultsSpan.innerHTML += "test</br>";
-=======
 function testToSpan(){
     resultsSpan.innerHTML += "</br>test";
->>>>>>> 4ed589a (Added Tic Tac Toe board)
 }
 
 testButton.addEventListener('click', () => {
