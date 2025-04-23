@@ -26,7 +26,7 @@ function createBoard(){
    |   |   
 ---+---+---
    |   |   
-"""
+""";
 }
 
 tictacButton.addEventListener('click', createBoard());
