@@ -20,7 +20,7 @@ const tictacButton = document.getElementById("tictac-button");
 const tictactoeBoard = document.getElementById("tictactoe-board-span");
 
 function createBoard(){
-    tictactoe-board-span.innerHTML = """
+    tictactoeBoard.innerHTML = """
    |   |   
 ---+---+---
    |   |   
