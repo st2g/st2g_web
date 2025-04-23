@@ -20,13 +20,13 @@ const tictacButton = document.getElementById("tictac-button");
 const tictactoeBoard = document.getElementById("tictactoe-board-span");
 
 function createBoard(){
-    tictactoeBoard.innerHTML = "<pre>
+    tictactoeBoard.innerHTML = `<pre>
    |   |   
 ---+---+---
    |   |   
 ---+---+---
    |   |   
-</pre>";
+</pre>`;
 }
 
-tictacButton.addEventListener('click', createBoard());
+tictacButton.addEventListener('click', createBoard);
