@@ -22,6 +22,8 @@ const tictactoeBoard = document.getElementById("tictactoe-board-span");
 // Allow user to place X or O on the board
 let currentPlayer = 'X';
 let boardState = Array(9).fill(null); // To keep track of the board's state
+let movesX = [];
+let movesO = [];
 
 function createBoard(){
     let boardHTML = '<div class="tictactoe-grid">';
@@ -45,6 +47,16 @@ tictactoeBoard.addEventListener('click', (event) => {
         if (boardState[cellIndex] === null) { // Only allow placing if the cell is empty
             clickedCell.textContent = currentPlayer;
             boardState[cellIndex] = currentPlayer;
+
+            const currentMoves = currentPlayer === 'X' ? movesX : movesO;
+            currentMoves.push(cellIndex);
+
+            if (currentMoves.length > 3) {
+                const removedIndex = currentMoves.shift();
+                boardState[removedIndex] = null;
+                const removedCell = document.querySelector(`.tictactoe-cell[data-cell-index="${removedIndex}"]`);
+                if (removedCell) removedCell.textContent = '';
+            }
 
             if (checkWin(currentPlayer)) {
                 setTimeout(() => {
@@ -87,4 +99,6 @@ function resetGame() {
         cell.textContent = '';
     });
     currentPlayer = 'X';
+    movesX = [];
+    movesO = [];
 }
