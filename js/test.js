@@ -106,4 +106,5 @@ function resetGame() {
     currentPlayer = 'X';
     movesX = [];
     movesO = [];
+    tttTurns = 0;
 }
