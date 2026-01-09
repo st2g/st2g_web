@@ -1,9 +1,9 @@
 // This is a test
-function getTest() {
-    console.log("test");
-}
+// function getTest() {
+//     console.log("test");
+// }
 
-getTest();
+// getTest();
 
 // const testButton = document.getElementById("test-button");
 // const resultsSpan = document.getElementById("test-span");
@@ -25,6 +25,7 @@ let currentPlayer = 'X';
 let boardState = Array(9).fill(null); // To keep track of the board's state
 let movesX = [];
 let movesO = [];
+let tttTurns = 0;
 
 function createBoard(){
     let boardHTML = '<div class="tictactoe-grid">';
@@ -59,10 +60,11 @@ tictactoeBoard.addEventListener('click', (event) => {
                 const removedCell = document.querySelector(`.tictactoe-cell[data-cell-index="${removedIndex}"]`);
                 if (removedCell) removedCell.textContent = '';
             }
+            tttTurns += 1;
 
             if (checkWin(currentPlayer)) {
                 setTimeout(() => {
-                    alert(`${currentPlayer} wins!`);
+                    alert(`${currentPlayer} wins after ${tttTurns} turns!`);
                     resetGame();
                 }, 100);
                 return;
@@ -77,7 +79,7 @@ tictactoeBoard.addEventListener('click', (event) => {
             }
 
             currentPlayer = currentPlayer === 'X' ? 'O' : 'X'; // Switch player
-    tictactoePlayer.innerHTML = "Player: " + currentPlayer;
+            tictactoePlayer.innerHTML = "Player: " + currentPlayer;
         }
     }
 });
