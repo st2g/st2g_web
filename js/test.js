@@ -5,19 +5,20 @@ function getTest() {
 
 getTest();
 
-const testButton = document.getElementById("test-button");
-const resultsSpan = document.getElementById("test-span");
-function testToSpan(){
-    resultsSpan.innerHTML += "</br>test";
-}
+// const testButton = document.getElementById("test-button");
+// const resultsSpan = document.getElementById("test-span");
+// function testToSpan(){
+//    resultsSpan.innerHTML += "</br>test";
+// }
 
-testButton.addEventListener('click', () => {
-    testToSpan();
-});
+// testButton.addEventListener('click', () => {
+//    testToSpan();
+// });
 
 // Add function to generate a tic tac toe board on click
 const tictacButton = document.getElementById("tictac-button");
 const tictactoeBoard = document.getElementById("tictactoe-board-span");
+const tictactoePlayer = document.getElementById("tictactoe-player-span");
 
 // Allow user to place X or O on the board
 let currentPlayer = 'X';
@@ -32,6 +33,7 @@ function createBoard(){
     }
     boardHTML += '</div>';
     tictactoeBoard.innerHTML = boardHTML;
+    tictactoePlayer.innerHTML = "Player: " + currentPlayer;
 }
 
 tictacButton.addEventListener('click', () => {
@@ -75,6 +77,7 @@ tictactoeBoard.addEventListener('click', (event) => {
             }
 
             currentPlayer = currentPlayer === 'X' ? 'O' : 'X'; // Switch player
+    tictactoePlayer.innerHTML = "Player: " + currentPlayer;
         }
     }
 });
